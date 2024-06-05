@@ -1,20 +1,19 @@
+import com.ryderbelserion.feather.includeProject
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 rootProject.name = "SavageFactions"
 
-/*include(":AddonFramework")
-include(":FactionsX")
-include("FactionsUUIDAPIProxy")
-include(":FTOP-Addon")
-include(":FWild-Addon")
-include(":FGrace-Addon")
-include(":FTNT-Addon")
-include(":FPrinter-Addon")
-include(":FMobTweaks-Addon")
-include(":FRoam-Addon")
-include(":FChest-Addon")
-include(":FRoster-Addon")
-include(":FDynmap-Addon")
-include(":FShop-Addon")
-include(":FCropUpgrades-Addon")
-include(":FMaxTileEntities-Addon")
-include(":FactionsUUIDAPIProxy")
-include(":FEssentials-Addon")*/
+pluginManagement {
+    repositories {
+        maven("https://repo.crazycrew.us/releases")
+
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    id("com.ryderbelserion.feather-settings") version "0.0.1"
+}
+
+listOf("paper").forEach(::includeProject)
