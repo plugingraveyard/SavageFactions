@@ -1,4 +1,4 @@
-import org.gradle.kotlin.dsl.support.zipTo
+/*import org.gradle.kotlin.dsl.support.zipTo
 
 allprojects {
     group = "net.prosavage.factionsx"
@@ -172,4 +172,4 @@ subprojects {
 repositories {
     mavenCentral()
     mavenLocal()
-}
+}*/
