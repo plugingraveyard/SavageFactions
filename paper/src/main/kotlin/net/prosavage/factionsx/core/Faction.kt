@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.core
 
-import com.cryptomorin.xseries.XMaterial
+
 import net.prosavage.factionsx.event.FPlayerFactionLeaveEvent
 import net.prosavage.factionsx.event.FPlayerFactionPreLeaveEvent
 import net.prosavage.factionsx.manager.*

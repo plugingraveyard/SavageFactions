@@ -1,17 +1,13 @@
 package net.prosavage.factionsx.util
 
-import com.cryptomorin.xseries.XMaterial
-import net.prosavage.baseplugin.ItemBuilder
 import org.bukkit.Material
 import org.bukkit.inventory.ItemStack
 
-class SerializableItem(var material: XMaterial, var name: String, var lore: List<String>, var amt: Int) {
+class SerializableItem(var material: Material, var name: String, var lore: List<String>, var amt: Int) {
 
-    fun buildItem(glowing: Boolean = false): ItemStack {
-        var parseItem: ItemStack? = material.parseItem()
-
+    fun buildItem(glowing: Boolean = false): ItemStack? {
         // hacky fixes :(
-        if (!XMaterial.isNewVersion())
+        /*if (!Material.isNewVersion())
             parseItem = when (parseItem?.type) {
                 Material.valueOf("REDSTONE_COMPARATOR_OFF") -> ItemStack(Material.valueOf("REDSTONE_COMPARATOR"))
                 Material.valueOf("DIODE_BLOCK_OFF") -> ItemStack(Material.valueOf("DIODE"))
@@ -22,13 +18,15 @@ class SerializableItem(var material: XMaterial, var name: String, var lore: List
                 else -> parseItem
             }
 
-        if (material == XMaterial.RED_DYE) {
-            parseItem = ItemStack(XMaterial.INK_SAC.parseMaterial()!!, 1, 1)
-        }
+        if (material == Material.RED_DYE) {
+            parseItem = ItemStack(Material.INK_SAC, 1, 1)
+        }*/
 
-        return if (parseItem?.type !== Material.AIR) {
-            ItemBuilder(parseItem).name(name).lore(lore).amount(amt).glowing(glowing).build()
-        } else parseItem
+        return null
+
+        //return if (parseItem?.type !== Material.AIR) {
+            //ItemBuilder(parseItem).name(name).lore(lore).amount(amt).glowing(glowing).build()
+        //} else parseItem
     }
 
 }

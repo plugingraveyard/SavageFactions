@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.persist.config.gui
 
-import com.cryptomorin.xseries.XMaterial
+
 import net.prosavage.baseplugin.serializer.Serializer
 import net.prosavage.factionsx.FactionsX
 import net.prosavage.factionsx.persist.IConfigFile
@@ -21,7 +21,7 @@ object UpgradesGUIConfig : IConfigFile {
     var scopesMenuTitle = "&7Choose a scope."
     var scopesMenuRows = 3
     var scopesMenuBackgroundItem = SerializableItem(
-            XMaterial.BLACK_STAINED_GLASS_PANE,
+            Material.BLACK_STAINED_GLASS_PANE,
             "&7",
             listOf(),
             1
@@ -31,7 +31,7 @@ object UpgradesGUIConfig : IConfigFile {
                     false,
                     Coordinate(1, 3),
                     SerializableItem(
-                            XMaterial.GRASS_BLOCK,
+                            Material.GRASS_BLOCK,
                             "&a&lTerritory Upgrades",
                             listOf(
                                     "&7Manage &aTerritory&7 upgrade.",
@@ -44,7 +44,7 @@ object UpgradesGUIConfig : IConfigFile {
                     false,
                     Coordinate(1, 5),
                     SerializableItem(
-                            XMaterial.BEACON,
+                            Material.BEACON,
                             "&b&lGlobal Upgrades",
                             listOf(
                                     "&7Manage &bGlobal&7 upgrades.",
@@ -59,7 +59,7 @@ object UpgradesGUIConfig : IConfigFile {
     var territoryChooseMenuTitle = "&aChoose a claim."
     var territoryChooseMenuRows = 6
     var territoryChooseMenuBackgroundItem = SerializableItem(
-            XMaterial.BLACK_STAINED_GLASS_PANE,
+            Material.BLACK_STAINED_GLASS_PANE,
             "&7",
             listOf(),
             1
@@ -68,7 +68,7 @@ object UpgradesGUIConfig : IConfigFile {
             false,
             Coordinate(1, 4),
             SerializableItem(
-                    XMaterial.NETHER_STAR,
+                    Material.NETHER_STAR,
                     "&aCurrent Claim",
                     listOf("&7World: &a{world}", "&7X: &a{x}", "&7Z: &a{z}", "&7Claim you are &astanding&7 in.", "&7Click to &a&lMANAGE"),
                     1
@@ -77,7 +77,7 @@ object UpgradesGUIConfig : IConfigFile {
     var territoryBrowserStartCoordinate = Coordinate(3, 0)
     var territoryBrowserItemsPerPage = 27
     var territoryItemFormat = SerializableItem(
-            XMaterial.GRASS_BLOCK,
+            Material.GRASS_BLOCK,
             "&aClaim",
             listOf(
                     "&7World: &a{world}", "&7X: &a{x}", "&7Z: &a{z}", "&7Click to &a&lMANAGE"
@@ -89,7 +89,7 @@ object UpgradesGUIConfig : IConfigFile {
             false,
             Coordinate(2, 1),
             SerializableItem(
-                    XMaterial.STONE_BUTTON,
+                    Material.STONE_BUTTON,
                     "&7Previous Page",
                     listOf("&7View claims on the previous page."),
                     1
@@ -99,7 +99,7 @@ object UpgradesGUIConfig : IConfigFile {
             false,
             Coordinate(2, 7),
             SerializableItem(
-                    XMaterial.STONE_BUTTON,
+                    Material.STONE_BUTTON,
                     "&7Next Page",
                     listOf("&7View claims on the next page."),
                     1
@@ -113,7 +113,7 @@ object UpgradesGUIConfig : IConfigFile {
                             false,
                             Coordinate(2, 8),
                             SerializableItem(
-                                    XMaterial.OAK_DOOR,
+                                    Material.OAK_DOOR,
                                     "&cBack",
                                     listOf("&7Click to go back to &cmain menu&7."),
                                     1
@@ -127,10 +127,10 @@ object UpgradesGUIConfig : IConfigFile {
     var territoryManageMenuRows = 6
     var defaultClaimName = "&aClaim"
     var defaultClaimRenameCancelMessage = "cancel"
-    var defaultClaimIcon = XMaterial.GRASS_BLOCK
+    var defaultClaimIcon = Material.GRASS_BLOCK
     var defaultClaimIconAssignCancelMessage = "cancel"
     var territoryManageMenuBackgroundItem = SerializableItem(
-            XMaterial.BLACK_STAINED_GLASS_PANE,
+            Material.BLACK_STAINED_GLASS_PANE,
             "&7",
             listOf(),
             1
@@ -140,7 +140,7 @@ object UpgradesGUIConfig : IConfigFile {
             false,
             Coordinate(1, 3),
             SerializableItem(
-                    XMaterial.NAME_TAG,
+                    Material.NAME_TAG,
                     "&aRename Claim",
                     listOf("&7Give this claim a &anickname&7.", "&7Nicknames make it easier to find again", "&7in &aterritory search menu."),
                     1
@@ -152,7 +152,7 @@ object UpgradesGUIConfig : IConfigFile {
             false,
             Coordinate(1, 5),
             SerializableItem(
-                    XMaterial.DIAMOND,
+                    Material.DIAMOND,
                     "&bIcon",
                     listOf("&7Give this claim a &bicon&7.", "&bIcons make it easier to find again", "&7in &aterritory search menu."),
                     1
@@ -163,7 +163,7 @@ object UpgradesGUIConfig : IConfigFile {
             false,
             Coordinate(2, 4),
             SerializableItem(
-                    XMaterial.GRASS_BLOCK,
+                    Material.GRASS_BLOCK,
                     "&bCurrent Claim",
                     listOf("&7World: &a{world}", "&7X: &a{x}", "&7Z: &a{z}", "&7You are currently &a&lMANAGING&7 this chunk."),
                     1

@@ -1,17 +1,17 @@
 package net.prosavage.factionsx.core
 
-import com.cryptomorin.xseries.XMaterial
 import net.prosavage.factionsx.util.MemberAction
 import net.prosavage.factionsx.util.PlayerAction
 import net.prosavage.factionsx.util.SpecialAction
-
+import org.bukkit.Material
 
 class CustomRole(var chatTag: String,
                  var roleTag: String,
                  var allowedPlayerActions: MutableList<PlayerAction>,
                  var allowedMemberActions: MutableList<MemberAction>,
                  var specialActions: MutableMap<String, Boolean>,
-                 var iconMaterial: XMaterial) {
+                 var iconMaterial: Material
+) {
 
     fun canDoMemberAction(memberAction: MemberAction): Boolean {
         if (allowedMemberActions == null) allowedMemberActions = mutableListOf()

@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.listener
 
-import com.cryptomorin.xseries.XMaterial.*
+.*
 import me.rayzr522.jsonmessage.JSONMessage
 import net.prosavage.factionsx.FactionsX.Companion.scoreboard
 import net.prosavage.factionsx.FactionsX.Companion.worldGuard

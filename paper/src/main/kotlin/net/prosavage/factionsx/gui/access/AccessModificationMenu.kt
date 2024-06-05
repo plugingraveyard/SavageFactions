@@ -1,6 +1,5 @@
 package net.prosavage.factionsx.gui.access
 
-import com.cryptomorin.xseries.XMaterial
 import fr.minuskube.inv.ClickableItem
 import fr.minuskube.inv.ClickableItem.empty
 import fr.minuskube.inv.InventoryListener
@@ -27,6 +26,7 @@ import net.prosavage.factionsx.persist.data.FLocation
 import net.prosavage.factionsx.util.PlayerAction
 import net.prosavage.factionsx.util.SerializableItem
 import net.prosavage.factionsx.util.preparePagination
+import org.bukkit.Material
 import org.bukkit.entity.Player
 import org.bukkit.event.inventory.InventoryClickEvent
 
@@ -40,7 +40,7 @@ class AccessModificationMenu(private val claim: FLocation, private val theObject
         val actionItems = arrayListOf<ClickableItem>()
 
         for (action in PlayerAction.values()) {
-            if (action.icon === XMaterial.AIR) continue
+            if (action.icon === Material.AIR) continue
             actionItems += buildClickableItem(player, action, pagination)
         }
 

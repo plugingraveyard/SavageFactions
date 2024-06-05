@@ -21,5 +21,3 @@ class PowerUpgrade(name: String, item: SerializableItem, maxLevelLore: List<Stri
 
     class PowerUpgradeListener(override val factionsX: FactionsX, override val upgrade: Upgrade) : UpgradeListener
 }
-
-

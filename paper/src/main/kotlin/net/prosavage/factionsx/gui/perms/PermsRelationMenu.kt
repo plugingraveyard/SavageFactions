@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.gui.perms
 
-import com.cryptomorin.xseries.XMaterial
+
 import fr.minuskube.inv.ClickableItem
 import fr.minuskube.inv.SmartInventory
 import fr.minuskube.inv.content.InventoryContents
@@ -31,7 +31,7 @@ class PermsRelationMenu(val forFaction: Faction, val relation: Relation) : Inven
     override fun init(player: Player, contents: InventoryContents) {
         contents.fill(ClickableItem.empty(PermsGUIConfig.relationMenuBackgroundItem.buildItem()))
         for ((playerAction, item) in PermsGUIConfig.relationMenuItems) {
-            if (item.hide || item.displayItem.material === XMaterial.AIR) continue
+            if (item.hide || item.displayItem.material === Material.AIR) continue
 
             val permForRelation = forFaction.relationPerms.getPermForRelation(relation, playerAction)
             val fPlayer = PlayerManager.getFPlayer(player)

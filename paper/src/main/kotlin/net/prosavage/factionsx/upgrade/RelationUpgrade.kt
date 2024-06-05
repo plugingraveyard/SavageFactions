@@ -26,6 +26,7 @@ class RelationUpgrade(val relation: Relation, name: String, item: SerializableIt
             Relation.TRUCE -> forFaction.truceBoost += boost
             Relation.NEUTRAL -> Unit
         }
+
         return true
     }
 

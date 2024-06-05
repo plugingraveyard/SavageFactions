@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.persist.config
 
-import com.cryptomorin.xseries.XMaterial
+
 import net.prosavage.baseplugin.serializer.Serializer
 import net.prosavage.factionsx.FactionsX
 import net.prosavage.factionsx.persist.IConfigFile
@@ -18,7 +18,7 @@ object ProtectionConfig : IConfigFile {
 
     var blackListedInteractionBlocksInOtherFactionLand = emptyList<Material>()
 
-    var whiteListedBreakableBlocksInOtherFactionLand = listOf(XMaterial.TORCH.parseMaterial(), XMaterial.REDSTONE_TORCH.parseMaterial())
+    var whiteListedBreakableBlocksInOtherFactionLand = listOf(Material.TORCH, Material.REDSTONE_TORCH)
 
     var whiteListedBreakableBlocksIncludesSystemFactions = true
 
@@ -34,7 +34,7 @@ object ProtectionConfig : IConfigFile {
     var allowGadgetDamageInSafezone = false
 
     var allowMaterialInteractionGlobally = mapOf(
-            XMaterial.ENDER_PEARL to XMaterial.values().filter { it.name.endsWith("DOOR") }.toSet()
+            Material.ENDER_PEARL to Material.values().filter { it.name.endsWith("DOOR") }.toSet()
     )
 
     var playerActionsInWarzone = hashMapOf(PlayerAction.HURT_PLAYER to true, PlayerAction.HURT_MOB to true)
@@ -70,15 +70,15 @@ object ProtectionConfig : IConfigFile {
 
     var denyBreakingBlocksEnemyNearByRadius = 50.0
     var denyBreakingBlocksWhenEnemyNear = listOf(
-            XMaterial.SPAWNER
+            Material.SPAWNER
     )
 
 
     var shiftRightClickableWhiteListInOtherFactionsLand = hashMapOf(
-            XMaterial.CREEPER_SPAWN_EGG.parseMaterial() to listOf(
-                    XMaterial.CHEST.parseMaterial(),
-                    XMaterial.TRAPPED_CHEST.parseMaterial(),
-                    XMaterial.ENDER_CHEST.parseMaterial()
+            Material.CREEPER_SPAWN_EGG to listOf(
+                    Material.CHEST,
+                    Material.TRAPPED_CHEST,
+                    Material.ENDER_CHEST
             )
     )
 

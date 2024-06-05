@@ -1,8 +1,6 @@
 package net.prosavage.factionsx.manager
 
-import me.rayzr522.jsonmessage.JSONMessage
 import net.prosavage.factionsx.core.FPlayer
-import net.prosavage.factionsx.persist.color
 import net.prosavage.factionsx.persist.data.Players
 import net.prosavage.factionsx.util.getFPlayer
 import org.bukkit.Bukkit
@@ -53,5 +51,5 @@ object PlayerManager {
 
 fun actionbar(player: Player, message: String, vararg args: String) {
     if (message.isEmpty()) return
-    JSONMessage.actionbar(color(String.format(message, *args)), player)
+    //JSONMessage.actionbar(color(String.format(message, *args)), player)
 }

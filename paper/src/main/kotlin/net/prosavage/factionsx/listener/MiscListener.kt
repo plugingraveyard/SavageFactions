@@ -44,7 +44,7 @@ class MiscListener : Listener {
                     factionAt.isWilderness() && !ProtectionConfig.allowExplosionsInWilderness
                     || factionAt.isSafezone() && !ProtectionConfig.allowExplosionsInSafeZone
                     || factionAt.isWarzone() && !ProtectionConfig.allowExplosionsInWarZone
-                    || !factionAt.isSystemFaction() && ProtectionConfig.disableTntExplosionsInOtherTerritories && event.entityType == EntityType.PRIMED_TNT
+                    || !factionAt.isSystemFaction() && ProtectionConfig.disableTntExplosionsInOtherTerritories && event.entityType == EntityType.TNT
             ) return@removeIf true
 
             val actionsWhenOffline = ProtectionConfig.overrideActionsWhenFactionOffline

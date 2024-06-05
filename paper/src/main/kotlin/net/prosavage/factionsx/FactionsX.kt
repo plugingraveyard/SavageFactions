@@ -38,6 +38,7 @@ import org.bstats.bukkit.Metrics
 import org.bukkit.Bukkit
 import org.bukkit.Bukkit.getPluginManager
 import org.bukkit.Chunk
+import org.bukkit.plugin.java.JavaPlugin
 import org.bukkit.scheduler.BukkitTask
 import java.io.File
 import java.util.*
@@ -48,7 +49,7 @@ import java.util.logging.Logger
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
-class FactionsX : SavagePlugin() {
+class FactionsX : JavaPlugin() {
 
     companion object {
         lateinit var instance: FactionsX

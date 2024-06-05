@@ -1,6 +1,5 @@
 package net.prosavage.factionsx.persist.config
 
-import com.cryptomorin.xseries.XMaterial
 import net.prosavage.baseplugin.serializer.Serializer
 import net.prosavage.factionsx.FactionsX
 import net.prosavage.factionsx.core.CustomRole
@@ -8,6 +7,7 @@ import net.prosavage.factionsx.core.FactionRoles
 import net.prosavage.factionsx.persist.IConfigFile
 import net.prosavage.factionsx.util.MemberAction
 import net.prosavage.factionsx.util.PlayerAction
+import org.bukkit.Material
 import java.io.File
 
 object RoleConfig : IConfigFile {
@@ -26,7 +26,7 @@ object RoleConfig : IConfigFile {
             PlayerAction.values().toMutableList(),
             mutableListOf(),
             HashMap(),
-            XMaterial.GREEN_BANNER
+            Material.GREEN_BANNER
     )
 
 
@@ -41,7 +41,7 @@ object RoleConfig : IConfigFile {
                                     PlayerAction.values().filter { action -> action != PlayerAction.HURT_PLAYER }.toMutableList(),
                                     MemberAction.values().toMutableList(),
                                     HashMap(),
-                                    XMaterial.DIAMOND_HELMET
+                                    Material.DIAMOND_HELMET
                             ),
                             3 to CustomRole(
                                     "**",
@@ -50,7 +50,7 @@ object RoleConfig : IConfigFile {
                                     MemberAction.values().toMutableList().filter { action -> action != MemberAction.DISBAND }
                                             .toMutableList(),
                                     HashMap(),
-                                    XMaterial.IRON_HELMET
+                                    Material.IRON_HELMET
                             ),
                             2 to CustomRole(
                                     "*",
@@ -58,7 +58,7 @@ object RoleConfig : IConfigFile {
                                     PlayerAction.values().filter { action -> action != PlayerAction.HURT_PLAYER }.toMutableList(),
                                     mutableListOf(MemberAction.INVITE, MemberAction.KICK, MemberAction.PROMOTE, MemberAction.RELATION),
                                     HashMap(),
-                                    XMaterial.GOLDEN_HELMET
+                                    Material.GOLDEN_HELMET
                             ),
                             1 to CustomRole(
                                     "+",
@@ -66,7 +66,7 @@ object RoleConfig : IConfigFile {
                                     PlayerAction.values().filter { action -> action != PlayerAction.HURT_PLAYER }.toMutableList(),
                                     mutableListOf(),
                                     HashMap(),
-                                    XMaterial.CHAINMAIL_HELMET
+                                    Material.CHAINMAIL_HELMET
                             ),
                             0 to CustomRole(
                                     "-",
@@ -74,7 +74,7 @@ object RoleConfig : IConfigFile {
                                     mutableListOf(PlayerAction.BREAK_BLOCK, PlayerAction.PLACE_BLOCK),
                                     mutableListOf(),
                                     HashMap(),
-                                    XMaterial.LEATHER_HELMET
+                                    Material.LEATHER_HELMET
                             )
                     )
             )

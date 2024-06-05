@@ -28,8 +28,5 @@ class MobExpUpgrade(name: String, item: SerializableItem, maxLevelLore: List<Str
             val multiplier = upgrade.getUpgradeParamForLevel(level) ?: return
             event.droppedExp = (event.droppedExp * multiplier).roundToInt()
         }
-
-
     }
 }
-

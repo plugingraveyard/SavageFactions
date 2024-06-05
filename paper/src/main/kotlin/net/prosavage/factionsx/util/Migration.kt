@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.util
 
-import com.cryptomorin.xseries.XMaterial
+
 import net.prosavage.factionsx.core.Faction
 import net.prosavage.factionsx.manager.FactionManager
 import net.prosavage.factionsx.persist.config.Config
@@ -22,7 +22,7 @@ object Migration {
                 if (role.iconMaterial == null) {
                     role.iconMaterial = RoleConfig.defaultRoles
                             .getRoleFromString(role.roleTag)
-                            ?.iconMaterial ?: XMaterial.DIAMOND_HELMET
+                            ?.iconMaterial ?: Material.DIAMOND_HELMET
                     logColored("PermGUIUpdate: Migrated ${faction.tag}'s ${role.roleTag} role icon from null -> ${role.iconMaterial}")
                 }
             }

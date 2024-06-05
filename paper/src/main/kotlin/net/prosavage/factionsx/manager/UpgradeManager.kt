@@ -1,10 +1,10 @@
 package net.prosavage.factionsx.manager
 
-import com.cryptomorin.xseries.XMaterial
 import net.prosavage.factionsx.FactionsX
 import net.prosavage.factionsx.persist.config.UpgradesConfig
 import net.prosavage.factionsx.upgrade.*
 import net.prosavage.factionsx.util.Relation
+import org.bukkit.Material
 import org.bukkit.entity.EntityType
 
 object UpgradeManager {
@@ -56,7 +56,7 @@ object UpgradeManager {
         when (type) {
             UpgradeType.DOUBLE_TALL -> upgrades.filterDisabled().forEach { configurableUpgrade ->
                 registerUpgrade(configurableUpgrade.scope, DoubleTallUpgrade(
-                        XMaterial.valueOf(configurableUpgrade.upgradeParam),
+                        Material.valueOf(configurableUpgrade.upgradeParam),
                         configurableUpgrade.name,
                         configurableUpgrade.upgradeItem,
                         configurableUpgrade.upgradeMaxLevelLore,

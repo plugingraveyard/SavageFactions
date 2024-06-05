@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.persist.config.gui
 
-import com.cryptomorin.xseries.XMaterial
+
 import net.prosavage.baseplugin.serializer.Serializer
 import net.prosavage.factionsx.FactionsX
 import net.prosavage.factionsx.persist.IConfigFile
@@ -17,7 +17,7 @@ object PermsGUIConfig : IConfigFile {
     var mainMenuTitle = "&aPermissions"
     var mainMenuRows = 4
     var mainMenuBackgroundItem = SerializableItem(
-            XMaterial.BLACK_STAINED_GLASS_PANE,
+            Material.BLACK_STAINED_GLASS_PANE,
             "&c",
             listOf(),
             1
@@ -27,7 +27,7 @@ object PermsGUIConfig : IConfigFile {
                     false,
                     Coordinate(1, 2),
                     SerializableItem(
-                            XMaterial.WHITE_TULIP,
+                            Material.WHITE_TULIP,
                             "&7Edit perms for &fneutral&7 factions.",
                             listOf(
                                     "&7Affects permissions for any &fneutral&7 faction.",
@@ -40,7 +40,7 @@ object PermsGUIConfig : IConfigFile {
                     false,
                     Coordinate(1, 3),
                     SerializableItem(
-                            XMaterial.BLAZE_POWDER,
+                            Material.BLAZE_POWDER,
                             "&7Edit perms for &cenemy&7 factions.",
                             listOf(
                                     "&7Affects permissions for &cenemy&7 factions."
@@ -52,7 +52,7 @@ object PermsGUIConfig : IConfigFile {
                     false,
                     Coordinate(1, 5),
                     SerializableItem(
-                            XMaterial.PINK_TULIP,
+                            Material.PINK_TULIP,
                             "&7Edit perms for &dally&7 factions.",
                             listOf(
                                     "&7Affects permissions for &dally&7 factions."
@@ -64,7 +64,7 @@ object PermsGUIConfig : IConfigFile {
                     false,
                     Coordinate(1, 6),
                     SerializableItem(
-                            XMaterial.ALLIUM,
+                            Material.ALLIUM,
                             "&7Edit perms for &5truce&7 factions.",
                             listOf(
                                     "&7Affects permissions for &5truce&7 factions."
@@ -86,7 +86,7 @@ object PermsGUIConfig : IConfigFile {
             false,
             Coordinate(2, 1),
             SerializableItem(
-                    XMaterial.STONE_BUTTON,
+                    Material.STONE_BUTTON,
                     "&7Previous Page",
                     listOf("&7View roles on the previous page."),
                     1
@@ -96,7 +96,7 @@ object PermsGUIConfig : IConfigFile {
             false,
             Coordinate(2, 7),
             SerializableItem(
-                    XMaterial.STONE_BUTTON,
+                    Material.STONE_BUTTON,
                     "&7Next Page",
                     listOf("&7View roles on the next page."),
                     1
@@ -141,17 +141,17 @@ object PermsGUIConfig : IConfigFile {
     var damageGadgetAction = "damage_gadget"
 
 
-    var hurtPlayerActionIcon = XMaterial.IRON_SWORD
-    var hurtMobActionIcon = XMaterial.BONE
-    var buttonActionIcon = XMaterial.STONE_BUTTON
-    var leverActionIcon = XMaterial.LEVER
-    var pressurePlaceActionIcon = XMaterial.STONE_PRESSURE_PLATE
-    var fenceGateActionIcon = XMaterial.OAK_FENCE_GATE
-    var trapdoorActionIcon = XMaterial.OAK_TRAPDOOR
-    var hookActionIcon = XMaterial.TRIPWIRE_HOOK
-    var hopperActionIcon = XMaterial.HOPPER
-    var lecternActionIcon = XMaterial.BOOKSHELF
-    var comparatorActionIcon = XMaterial.COMPARATOR
+    var hurtPlayerActionIcon = Material.IRON_SWORD
+    var hurtMobActionIcon = Material.BONE
+    var buttonActionIcon = Material.STONE_BUTTON
+    var leverActionIcon = Material.LEVER
+    var pressurePlaceActionIcon = Material.STONE_PRESSURE_PLATE
+    var fenceGateActionIcon = Material.OAK_FENCE_GATE
+    var trapdoorActionIcon = Material.OAK_TRAPDOOR
+    var hookActionIcon = Material.TRIPWIRE_HOOK
+    var hopperActionIcon = Material.HOPPER
+    var lecternActionIcon = Material.BOOKSHELF
+    var comparatorActionIcon = Material.COMPARATOR
     var repeaterActionIcon = XMaterial.REPEATER
     var dispenserActionIcon = XMaterial.DISPENSER
     var doorActionIcon = XMaterial.OAK_DOOR

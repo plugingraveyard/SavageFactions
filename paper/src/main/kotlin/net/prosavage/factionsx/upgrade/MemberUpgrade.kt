@@ -23,5 +23,3 @@ class MemberUpgrade(name: String, item: SerializableItem, maxLevelLore: List<Str
     class MemberUpgradeListener(override val factionsX: FactionsX, override val upgrade: Upgrade) : UpgradeListener
 
 }
-
-

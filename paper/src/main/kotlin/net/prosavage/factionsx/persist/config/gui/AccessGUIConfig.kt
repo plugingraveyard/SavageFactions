@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.persist.config.gui
 
-import com.cryptomorin.xseries.XMaterial.*
+.*
 import net.prosavage.baseplugin.serializer.Serializer
 import net.prosavage.factionsx.FactionsX
 import net.prosavage.factionsx.persist.IConfigFile

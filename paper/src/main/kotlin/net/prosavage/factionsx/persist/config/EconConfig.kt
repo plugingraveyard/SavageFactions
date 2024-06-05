@@ -1,6 +1,5 @@
 package net.prosavage.factionsx.persist.config
 
-import net.prosavage.baseplugin.serializer.Serializer
 import net.prosavage.factionsx.FactionsX
 import net.prosavage.factionsx.persist.IConfigFile
 import net.prosavage.factionsx.util.TransactionResponse
@@ -45,12 +44,12 @@ object EconConfig : IConfigFile {
     var claimLandCost = 10.0
     var factionCreateCost = 100.0
     override fun save(factionsx: FactionsX) {
-        Serializer(false, factionsx.dataFolder, factionsx.logger)
-                .save(instance, File("${factionsx.dataFolder}/config", "econ-config.json"))
+        //Serializer(false, factionsx.dataFolder, factionsx.logger)
+        //        .save(instance, File("${factionsx.dataFolder}/config", "econ-config.json"))
     }
 
     override fun load(factionsx: FactionsX) {
-        Serializer(false, factionsx.dataFolder, factionsx.logger)
-                .load(EconConfig.instance, EconConfig::class.java, File("${factionsx.dataFolder}/config", "econ-config.json"))
+        //Serializer(false, factionsx.dataFolder, factionsx.logger)
+        //        .load(EconConfig.instance, EconConfig::class.java, File("${factionsx.dataFolder}/config", "econ-config.json"))
     }
 }

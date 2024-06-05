@@ -1,7 +1,7 @@
 package net.prosavage.factionsx.core
 
 
-import com.cryptomorin.xseries.XMaterial
+
 import fr.mrmicky.fastboard.FastBoard
 import fr.mrmicky.fastparticles.ParticleType
 import kotlinx.coroutines.GlobalScope
@@ -81,7 +81,7 @@ data class FPlayer(val uuid: UUID, var name: String) {
     }
 
     fun assignIcon(material: Material) {
-        assigningClaimIcon?.icon = XMaterial.matchXMaterial(material)
+        assigningClaimIcon?.icon = Material.matchXMaterial(material)
     }
 
     @Transient
@@ -220,7 +220,7 @@ data class FPlayer(val uuid: UUID, var name: String) {
 
     fun getAmountOfMaterialInPlayerInv(material: XMaterial): Int =
         getPlayer()?.inventory?.contents?.sumBy {
-            if (it != null && XMaterial.matchXMaterial(it) === material) it.amount else 0
+            if (it != null && Material.matchXMaterial(it) === material) it.amount else 0
         } ?: 0
 
     fun takeAmountOfMaterialFromPlayerInv(material: XMaterial, amount: Int): Int {
@@ -234,7 +234,7 @@ data class FPlayer(val uuid: UUID, var name: String) {
             }
 
             val item = inventory.getItem(index) ?: continue
-            if (XMaterial.matchXMaterial(item) != material) {
+            if (Material.matchXMaterial(item) != material) {
                 continue
             }
 

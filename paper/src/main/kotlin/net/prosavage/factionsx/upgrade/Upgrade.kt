@@ -13,7 +13,6 @@ import org.bukkit.Bukkit
 import org.bukkit.event.HandlerList
 import org.bukkit.event.Listener
 
-
 data class LevelInfo(val upgradeParam: Double, val price: Double)
 
 abstract class Upgrade(val name: String, val item: SerializableItem, val maxLevelItemLore: List<String>, val upgradeLevelInfo: Map<Int, LevelInfo>) {

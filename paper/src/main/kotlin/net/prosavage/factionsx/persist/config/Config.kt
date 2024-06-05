@@ -1,6 +1,5 @@
 package net.prosavage.factionsx.persist.config
 
-import com.cryptomorin.xseries.XMaterial
 import net.prosavage.baseplugin.serializer.Serializer
 import net.prosavage.factionsx.FactionsX
 import net.prosavage.factionsx.persist.IConfigFile
@@ -15,7 +14,6 @@ import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
-import javax.swing.plaf.TreeUI
 
 object Config : IConfigFile {
 
@@ -146,8 +144,8 @@ object Config : IConfigFile {
     var factionCreationCommandsToExecute = listOf<String>()
     var factionCreationAutoClaimChunkWhereStanding = false
     var factionCreationFillChunkBorderOnFirstClaim = false
-    var factionCreationFillChunkBorderOnFirstClaimType = XMaterial.COBBLESTONE_WALL
-    var factionCreationFillChunkBorderOnFirstClaimPassableType = setOf(XMaterial.AIR, XMaterial.GRASS, XMaterial.TALL_GRASS)
+    var factionCreationFillChunkBorderOnFirstClaimType = Material.COBBLESTONE_WALL
+    var factionCreationFillChunkBorderOnFirstClaimPassableType = setOf(Material.AIR, Material.SHORT_GRASS, Material.TALL_GRASS)
     var factionCreationFillChunkBorderOnFirstClaimCoolDownSeconds = 86400
     var factionFirstClaimAutoSetHome = false
     var factionFirstClaimExecuteCommands = listOf<String>()
@@ -241,7 +239,7 @@ object Config : IConfigFile {
             false,
             Coordinate(0, 13),
             SerializableItem(
-                    XMaterial.WRITABLE_BOOK,
+                    Material.WRITABLE_BOOK,
                     "&7Faction Shield Schedule",
                     listOf(
                             "&7Set your shield schedule",
@@ -256,7 +254,7 @@ object Config : IConfigFile {
     var shieldsGUIRows = 5
     var shieldsGUIName = "&6Faction Shields"
     var shieldsGUIBackgroundItem = SerializableItem(
-            XMaterial.BLACK_STAINED_GLASS_PANE,
+            Material.BLACK_STAINED_GLASS_PANE,
             "&8",
             emptyList(),
             1
@@ -267,7 +265,7 @@ object Config : IConfigFile {
     var shieldActivePlaceholderFalse = "No"
 
     var shieldTimerItem = SerializableItem(
-            XMaterial.CLOCK,
+            Material.CLOCK,
             "&7{time}",
             listOf(
                     "&7Shield timings everyday:",
@@ -284,11 +282,11 @@ object Config : IConfigFile {
     )
 
     var shieldModeTwoPreviousItem = InterfaceItem(
-            false, Coordinate(2, 3), SerializableItem(XMaterial.STONE_BUTTON, "&6< Previous", listOf(), 1)
+            false, Coordinate(2, 3), SerializableItem(Material.STONE_BUTTON, "&6< Previous", listOf(), 1)
     )
 
     var shieldModeTwoNextItem = InterfaceItem(
-            false, Coordinate(2, 5), SerializableItem(XMaterial.STONE_BUTTON, "&6Next >", listOf(), 1)
+            false, Coordinate(2, 5), SerializableItem(Material.STONE_BUTTON, "&6Next >", listOf(), 1)
     )
 
 
@@ -373,15 +371,13 @@ object Config : IConfigFile {
 
 
     override fun save(instance: FactionsX) {
-        Serializer(false, instance.dataFolder, instance.logger)
-                .save(Config.instance, File("${instance.dataFolder}/config", "general-config.json"))
+        //Serializer(false, instance.dataFolder, instance.logger)
+        //        .save(Config.instance, File("${instance.dataFolder}/config", "general-config.json"))
     }
 
     override fun load(factionsx: FactionsX) {
-        Serializer(false, factionsx.dataFolder, factionsx.logger)
-                .load(Config.instance, Config::class.java, File("${factionsx.dataFolder}/config", "general-config.json"))
-        dateCreationFormat.applyPattern(factionCreationDateFormat)
+        //Serializer(false, factionsx.dataFolder, factionsx.logger)
+        //        .load(Config.instance, Config::class.java, File("${factionsx.dataFolder}/config", "general-config.json"))
+        //dateCreationFormat.applyPattern(factionCreationDateFormat)
     }
-
-
 }

@@ -31,6 +31,5 @@ class MobDropMultiplierUpgrade(targetEntity: EntityType, name: String, item: Ser
                 it.amount = ceil(it.amount * upgradeParam).toInt()
             }
         }
-
     }
 }

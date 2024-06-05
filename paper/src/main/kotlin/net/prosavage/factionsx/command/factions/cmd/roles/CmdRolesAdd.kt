@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.command.factions.cmd.roles
 
-import com.cryptomorin.xseries.XMaterial
+
 import net.prosavage.factionsx.command.engine.CommandInfo
 import net.prosavage.factionsx.command.engine.CommandRequirementsBuilder
 import net.prosavage.factionsx.command.engine.FCommand
@@ -23,7 +23,7 @@ class CmdRolesAdd : FCommand() {
         val chatTag = info.args[0]
         val roleTag = info.args[1]
         val material = info.args[2]
-        val iconMaterial = XMaterial.matchXMaterial(material)
+        val iconMaterial = Material.matchXMaterial(material)
         if (!iconMaterial.isPresent) {
             info.message(Message.commandRolesAddInvalidXMat)
             return false

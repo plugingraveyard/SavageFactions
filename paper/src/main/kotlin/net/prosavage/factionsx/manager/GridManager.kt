@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.manager
 
-import com.cryptomorin.xseries.XMaterial
+
 import com.google.common.collect.ArrayListMultimap
 import com.google.common.collect.ListMultimap
 import net.prosavage.factionsx.FactionsX
@@ -110,7 +110,7 @@ object GridManager {
             val locations = highestBlocksYAt(snapshot)
 
             Bukkit.getScheduler().runTask(FactionsX.instance, Runnable {
-                locations.forEach { location -> location.block.type = factionCreationFillChunkBorderOnFirstClaimType.parseMaterial()!! }
+                locations.forEach { location -> location.block.type = factionCreationFillChunkBorderOnFirstClaimType }
             })
         })
     }
@@ -138,10 +138,10 @@ object GridManager {
     }
 
     private fun checkBlockFromSnapshot(x: Int, y: Int, z: Int, snapshot: ChunkSnapshot): Pair<Boolean, Double> {
-        val above = XMaterial.matchXMaterial(snapshot.getBlockType(x, y + 1, z))
-        val below = XMaterial.matchXMaterial(snapshot.getBlockType(x, y, z))
+        val above = Material.matchMaterial(snapshot.getBlockType(x, y + 1, z).name)
+        val below = Material.matchMaterial(snapshot.getBlockType(x, y, z).name)
 
-        val condition = above in factionCreationFillChunkBorderOnFirstClaimPassableType && below != XMaterial.AIR
+        val condition = above in factionCreationFillChunkBorderOnFirstClaimPassableType && below != Material.AIR
         return condition to if (below in factionCreationFillChunkBorderOnFirstClaimPassableType) 0.0 else 1.0
     }
 

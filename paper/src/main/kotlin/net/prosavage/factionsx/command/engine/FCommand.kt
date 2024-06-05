@@ -1,7 +1,7 @@
 package net.prosavage.factionsx.command.engine
 
 
-import com.cryptomorin.xseries.XMaterial
+
 import me.rayzr522.jsonmessage.JSONMessage
 import net.prosavage.factionsx.FactionsX
 import net.prosavage.factionsx.command.admin.FactionsAdminBaseCommand
@@ -288,7 +288,7 @@ abstract class FCommand {
 
     class XMaterialArgument : ArgumentType() {
         override fun getPossibleValues(fPlayer: FPlayer?): List<String> {
-            return XMaterial.values().map { it.name }
+            return Material.values().map { it.name }
         }
     }
 

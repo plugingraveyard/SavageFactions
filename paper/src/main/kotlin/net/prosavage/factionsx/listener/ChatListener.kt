@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.listener
 
-import com.cryptomorin.xseries.XMaterial
+
 import net.prosavage.factionsx.FactionsX
 import net.prosavage.factionsx.core.ChatChannel
 import net.prosavage.factionsx.core.FPlayer
@@ -15,6 +15,7 @@ import net.prosavage.factionsx.persist.config.gui.UpgradesGUIConfig
 import net.prosavage.factionsx.util.Relation
 import net.prosavage.factionsx.util.color
 import org.bukkit.Bukkit
+import org.bukkit.Material
 import org.bukkit.event.EventHandler
 import org.bukkit.event.EventPriority
 import org.bukkit.event.Listener
@@ -69,7 +70,7 @@ class ChatListener : Listener {
                 factionPlayer.assigningClaimIcon = null
                 factionPlayer.message(Message.commandUpgradeClaimIconAssignCancelled)
             } else {
-                factionPlayer.assigningClaimIcon?.icon = XMaterial.matchXMaterial(event.message).orElseGet { XMaterial.GRASS_BLOCK }
+                factionPlayer.assigningClaimIcon?.icon = Material.matchMaterial(event.message)
                 Bukkit.getScheduler().runTask(FactionsX.instance, Runnable {
                     UpgradesTerritoryManageMenu.getInv(faction, factionPlayer.assigningClaimIcon!!)?.open(player)
                     factionPlayer.assigningClaimIcon = null

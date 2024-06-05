@@ -1,6 +1,5 @@
 package net.prosavage.factionsx.util
 
-import com.cryptomorin.xseries.XMaterial
 import net.prosavage.factionsx.core.FPlayer
 import net.prosavage.factionsx.core.Faction
 import net.prosavage.factionsx.manager.PlayerManager
@@ -20,7 +19,6 @@ import java.util.*
 import java.util.concurrent.ForkJoinPool.commonPool
 import java.util.concurrent.ThreadLocalRandom
 import kotlin.math.roundToInt
-
 
 fun color(message: String): String = ChatColor.translateAlternateColorCodes('&', message)
 
@@ -102,23 +100,23 @@ fun Player.getDirection(): BlockFace = orderedDirections[
         (this.location.yaw / 45).roundToInt() and 0x7
 ]
 
-fun Material.getXMaterial(): XMaterial {
-    return XMaterial.matchXMaterial(this)
+fun Material.getXMaterial(): Material? {
+    return Material.matchMaterial(this.name)
 }
 
 
-fun XMaterial.isPressurePlate(): Boolean {
-    return (this == XMaterial.STONE_PRESSURE_PLATE
-            || this == XMaterial.ACACIA_PRESSURE_PLATE
-            || this == XMaterial.BIRCH_PRESSURE_PLATE
-            || this == XMaterial.DARK_OAK_PRESSURE_PLATE
-            || this == XMaterial.HEAVY_WEIGHTED_PRESSURE_PLATE
-            || this == XMaterial.JUNGLE_PRESSURE_PLATE
-            || this == XMaterial.LIGHT_WEIGHTED_PRESSURE_PLATE
-            || this == XMaterial.OAK_PRESSURE_PLATE
-            || this == XMaterial.SPRUCE_PRESSURE_PLATE
-            || this == XMaterial.CRIMSON_PRESSURE_PLATE
-            || this == XMaterial.WARPED_PRESSURE_PLATE)
+fun Material.isPressurePlate(): Boolean {
+    return (this == Material.STONE_PRESSURE_PLATE
+            || this == Material.ACACIA_PRESSURE_PLATE
+            || this == Material.BIRCH_PRESSURE_PLATE
+            || this == Material.DARK_OAK_PRESSURE_PLATE
+            || this == Material.HEAVY_WEIGHTED_PRESSURE_PLATE
+            || this == Material.JUNGLE_PRESSURE_PLATE
+            || this == Material.LIGHT_WEIGHTED_PRESSURE_PLATE
+            || this == Material.OAK_PRESSURE_PLATE
+            || this == Material.SPRUCE_PRESSURE_PLATE
+            || this == Material.CRIMSON_PRESSURE_PLATE
+            || this == Material.WARPED_PRESSURE_PLATE)
 }
 
 internal val nmsVersion: Int = Bukkit
@@ -156,9 +154,9 @@ fun Faction.isActionsWhenOfflineCompatible(actionsWhenOffline: ProtectionConfig.
             && System.currentTimeMillis() >= (this.getMembers().maxBy { it.timeAtLastLogin }?.timeAtLastLogin ?: 0).plus(actionsWhenOffline.hasBeenOfflineForSeconds * 1000)
 }
 
-fun Material.isAnyAir(): Boolean = when (XMaterial.matchXMaterial(this)) {
-    XMaterial.AIR,
-    XMaterial.CAVE_AIR,
-    XMaterial.VOID_AIR -> true
+fun Material.isAnyAir(): Boolean = when (Material.matchMaterial(this.name)) {
+    Material.AIR,
+    Material.CAVE_AIR,
+    Material.VOID_AIR -> true
     else -> false
 }

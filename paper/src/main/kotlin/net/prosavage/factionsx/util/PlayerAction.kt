@@ -1,10 +1,10 @@
 package net.prosavage.factionsx.util
 
-import com.cryptomorin.xseries.XMaterial
 import net.prosavage.factionsx.persist.config.ProtectionConfig.overrideActionsForRelation
 import net.prosavage.factionsx.persist.config.gui.PermsGUIConfig
+import org.bukkit.Material
 
-enum class PlayerAction(val actionName: String, val icon: XMaterial) {
+enum class PlayerAction(val actionName: String, val icon: Material) {
     HURT_PLAYER(PermsGUIConfig.hurtPlayerAction, PermsGUIConfig.hurtPlayerActionIcon),
     HURT_MOB(PermsGUIConfig.hurtMobsAction, PermsGUIConfig.hurtMobActionIcon),
     BUTTON(PermsGUIConfig.buttonAction, PermsGUIConfig.buttonActionIcon),

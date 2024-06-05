@@ -1,10 +1,10 @@
 package net.prosavage.factionsx.util
 
-import com.cryptomorin.xseries.XMaterial
 import net.prosavage.factionsx.persist.config.Config
 import net.prosavage.factionsx.persist.config.gui.PermsGUIConfig
+import org.bukkit.Material
 
-enum class MemberAction(val actionName: String, val icon: XMaterial) {
+enum class MemberAction(val actionName: String, val icon: Material) {
     KICK(Config.memberActionKick, PermsGUIConfig.kickActionIcon),
     DISBAND(Config.memberActionDisband, PermsGUIConfig.disbandActionIcon),
     INVITE(Config.memberActionInvite, PermsGUIConfig.inviteActionIcon),

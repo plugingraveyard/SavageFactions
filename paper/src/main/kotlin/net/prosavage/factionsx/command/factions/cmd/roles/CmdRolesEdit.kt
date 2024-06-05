@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.command.factions.cmd.roles
 
-import com.cryptomorin.xseries.XMaterial
+
 import net.prosavage.factionsx.command.engine.CommandInfo
 import net.prosavage.factionsx.command.engine.CommandRequirementsBuilder
 import net.prosavage.factionsx.command.engine.FCommand
@@ -34,7 +34,7 @@ class CmdRolesEdit : FCommand() {
         when (roleProperty) {
             RolePropertyType.CHAT_TAG -> role.chatTag = stringProperty
             RolePropertyType.ROLE_TAG -> role.roleTag = stringProperty
-            RolePropertyType.ICON_MATERIAL -> role.iconMaterial = XMaterial.matchXMaterial(stringProperty).get()
+            RolePropertyType.ICON_MATERIAL -> role.iconMaterial = Material.matchXMaterial(stringProperty).get()
             RolePropertyType.PERMISSIONS -> PermsRoleMenu.getInv(info.faction!!, role)?.open(info.player)
         }
         return true

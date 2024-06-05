@@ -53,6 +53,4 @@ object FlyConfig : IConfigFile {
         Serializer(false, factionsx.dataFolder, factionsx.logger)
                 .load(FlyConfig.instance, FlyConfig::class.java, File("${factionsx.dataFolder}/config", "fly-config.json"))
     }
-
-
 }

@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.gui.perms
 
-import com.cryptomorin.xseries.XMaterial
+
 import fr.minuskube.inv.ClickableItem
 import fr.minuskube.inv.SmartInventory
 import fr.minuskube.inv.content.InventoryContents
@@ -42,7 +42,7 @@ class PermsRoleMenu(val forFaction: Faction, val role: CustomRole) : InventoryPr
         val permissionItems = mutableListOf<ClickableItem>()
 
         PermsGUIConfig.roleMenuPlayerActionItems.forEach { (playerAction, item) ->
-            if (item.hide || item.item.material === XMaterial.AIR) return@forEach
+            if (item.hide || item.item.material === Material.AIR) return@forEach
 
             val permForRole = role.allowedPlayerActions.contains(playerAction)
             val clickableItem = ClickableItem.of(ItemBuilder(item.item.buildItem()).lore(formatLore(permForRole, item.item.lore)).glowing(permForRole).build()) {
@@ -57,7 +57,7 @@ class PermsRoleMenu(val forFaction: Faction, val role: CustomRole) : InventoryPr
         }
 
         PermsGUIConfig.roleMenuMemberActionItems.forEach { (memberAction, item) ->
-            if (item.hide || item.item.material === XMaterial.AIR) return@forEach
+            if (item.hide || item.item.material === Material.AIR) return@forEach
 
             val permForRole = role.allowedMemberActions.contains(memberAction)
             val clickableItem = ClickableItem.of(ItemBuilder(item.item.buildItem()).lore(formatLore(permForRole, item.item.lore)).glowing(permForRole).build()) {

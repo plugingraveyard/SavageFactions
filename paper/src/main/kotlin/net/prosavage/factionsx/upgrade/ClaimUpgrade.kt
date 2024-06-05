@@ -23,5 +23,3 @@ class ClaimUpgrade(name: String, item: SerializableItem, maxLevelLore: List<Stri
     class ClaimUpgradeListener(override val factionsX: FactionsX, override val upgrade: Upgrade) : UpgradeListener
 
 }
-
-

@@ -1,6 +1,6 @@
 package net.prosavage.factionsx.persist.data
 
-import com.cryptomorin.xseries.XMaterial
+
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import com.google.gson.JsonPrimitive
